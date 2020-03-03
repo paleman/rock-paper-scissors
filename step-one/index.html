@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Let's Play a Game!</title>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <script>
+
+    function computerPlay() {
+        const choice = ['Rock', 'Paper', 'Scissors'];
+        const randomChoice = choice[Math.floor(Math.random() * choice.length)];
+        return randomChoice;
+    }    
+
+    function playRound(playerSelection, computerSelection) {
+
+        if (playerSelection == computerSelection) {
+            return 'It\'s a tie! Nobody wins!';
+        }
+        else if (playerSelection == 'rock' && computerSelection == 'scissors') {
+            return 'You win! Rock beats Scissors!'
+        }
+        else if (playerSelection == 'paper' && computerSelection == 'rock') {
+            return 'You win! Paper beats Rock!'
+        }
+        else if (playerSelection == 'scissors' && computerSelection == 'paper') {
+            return 'You win! Scissors beats Paper!'
+        }
+        else if (playerSelection == 'rock' && computerSelection == 'paper') {
+            return 'You lose! Paper beats Rock!'
+        }
+        else if (playerSelection == 'paper' && computerSelection == 'scissors') {
+            return 'You lose! Scissors beats Paper'
+        }
+        else if (playerSelection == 'scissors' && computerSelection == 'rock') {
+            return 'You lose! Rock beats Scissors'
+        }
+        else {
+            return 'Hmm, something went wrong.';
+        } 
+    }
+
+    const playerSelection = prompt('Pick Rock, Paper, or Scissors');
+    const computerSelection = computerPlay();
+    console.log(playRound(playerSelection.toLowerCase(), computerSelection.toLowerCase()))
+
+        </script>
+
+    </body>
+</html>
